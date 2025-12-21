@@ -1,0 +1,342 @@
+/* GENEL AYARLAR */
+body {
+    background-image: url(siyah-beyaz.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    min-height: 100vh;
+    background-color: rgba(1, 1, 1, 0.7);
+    background-blend-mode: overlay;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* BAŞLIKLAR */
+h1 {
+    color: rgb(225, 255, 255);
+    font-size: 4rem; /* Daha responsive boyut */
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2rem 0;
+    padding: 0 20px;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 3rem 0 2rem 0;
+}
+
+/* MENÜ */
+.menu {
+    background: rgba(128, 128, 128, 0.9);
+    text-align: center;
+    padding: 25px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+}
+
+.menu a {
+    color: rgb(8, 52, 90);
+    font-size: 1.3rem;
+    text-decoration: none;
+    margin: 0 1.5rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.menu a:hover {
+    background-color: aqua;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* HAKKIMDA BÖLÜMÜ */
+.hakkimda-kutusu {
+    display: flex;
+    flex-wrap: wrap; /* Mobil için */
+    gap: 40px;
+    padding: 40px 5%;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hakkimda-yazi {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.hakkimda-foto {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.hakkimda-foto img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.hakkimda-foto img:hover {
+    transform: scale(1.03);
+}
+
+/* PARAGRAF STİLLERİ */
+p {
+    color: white;
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    margin: 0;
+}
+
+b {
+    color: aqua;
+    font-weight: 600;
+}
+
+/* TABLO */
+table {
+    margin: 20px auto;
+    text-align: center;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* RESPONSIVE TASARIM */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    .menu a {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+        max-width: 250px;
+    }
+    
+    .hakkimda-kutusu {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .hakkimda-yazi,
+    .hakkimda-foto {
+        min-width: 100%;
+    }
+    
+    .hakkimda-foto img {
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hakkimda-kutusu {
+        padding: 30px;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+}
+.icon{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;  
+    flex-wrap: wrap;  
+}
+.yaptiklarim {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.kucuk-resim {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.yenisatirproje{
+    margin-left: 6.6rem;
+        width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.kucuk-resim:hover {
+    transform: scale(1.05);
+}
+
+/* Checkbox gizle */
+.lightbox-toggle {
+    display: none;
+}
+
+/* Lightbox - Başlangıçta gizli */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding-top: 50px;
+    animation: fadeIn 0.3s;
+}
+
+/* Her bir lightbox için özel seçiciler */
+#lightbox-toggle1:checked ~ #lightbox1,
+#lightbox-toggle2:checked ~ #lightbox2,
+#lightbox-toggle3:checked ~ #lightbox3,
+#lightbox-toggle4:checked ~ #lightbox4,
+#lightbox-toggle5:checked ~ #lightbox5,
+#lightbox-toggle6:checked ~ #lightbox6,
+#lightbox-toggle7:checked ~ #lightbox7,
+#lightbox-toggle8:checked ~ #lightbox8,
+#lightbox-toggle9:checked ~ #lightbox9, 
+#lightbox-toggle10:checked ~ #lightbox10,
+#lightbox-toggle11:checked ~ #lightbox11,
+#lightbox-toggle12:checked ~ #lightbox12,
+#lightbox-toggle13:checked ~ #lightbox13,
+#lightbox-toggle14:checked ~ #lightbox14,
+#lightbox-toggle15:checked ~ #lightbox15,
+#lightbox-toggle16:checked ~ #lightbox16,
+#lightbox-toggle17:checked ~ #lightbox17,
+#lightbox-toggle18:checked ~ #lightbox18,
+#lightbox-toggle19:checked ~ #lightbox19,
+#lightbox-toggle20:checked ~ #lightbox20{
+    display: block;
+}
+
+/* Kapatma için */
+#lightbox-close:checked ~ .lightbox {
+    display: none;
+}
+
+/* ESC tuşu ve dışarı tıklama desteği */
+.lightbox::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Büyük resim */
+.buyuk-resim {
+    max-width: 90%;
+    max-height: 80vh;
+    margin: auto;
+    display: block;
+    animation: zoomIn 0.3s ease;
+    position: relative;
+    z-index: 1002;
+}
+
+/* Kapat butonu */
+.kapat {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.kapat:hover {
+    color: #ccc;
+}
+
+/* Açıklama */
+.aciklama {
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    position: relative;
+    z-index: 1002;
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+}
+
+/* Resim kapsayıcısı */
+.resim-kapsayici {
+    position: relative;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Resimler arası boşluk */
+}
+
+.footer a {
+    margin: 0; /* Flexbox olduğu için gerek yok */
+}
+
+.footer img {
+    transition: transform 0.3s;
+}
+
+.footer img:hover {
+    transform: scale(1.1);
+}
+.icon-boyutu{
+    width: 100%; 
+    max-width: 100px;
+    height: 100px;
+}
+
