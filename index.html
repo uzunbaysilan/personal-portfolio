@@ -29,18 +29,20 @@
                 çok geliştirdim. Hocalarımın desteğiyle her gün daha çok gelişiyorum.</p>
                 
                 <p>Bunun yanı sıra kendi gelişimime yabancı diller de katarak devam 
-                ediyorum. Bildiğim ve öğrenmeye çalıştığım diller: <b>İngilizce, 
-                Kürtçe, Almanca, Arapça, Korece</b>.</p>
+                ediyorum. Bildiğim diller: <b>Türkçe ve Kürtçe.</b> Öğrenmeye çalıştığım diller: <b>İngilizce, 
+                 Almanca, Arapça, Korece</b>.</p>
             </div>
             
             <div class="hakkimda-foto">
-                <img src="ben5.jpeg" alt="Şilan Uzunbay" title="Şilan Uzunbay">
+                <img src="ben6.png" alt="Şilan Uzunbay" title="Şilan Uzunbay">
+                  <img src="ben7.png" alt="Şilan Uzunbay" title="Şilan Uzunbay">
             </div>
         </div>
     </section>
     <section id="bildiklerim">
         <h2>BİLDİKLERİM</h2>
-            <div class="icon">
+        
+                <div class="icon-seridi">
                 <img src="bildiklerimIcon/htmlIcon.png" width="100px" height="100px"  alt="HTML">
                 <img src="bildiklerimIcon/cssIcon.png" width="100px" height="100px"  alt="CSS">
                 <img src="bildiklerimIcon/sqlIcon.png" width="100px" height="100px"  alt="SQL">
@@ -49,7 +51,10 @@
                 <img src="bildiklerimIcon/photoshopIcon.png" width="100px" height="100px"  alt="PHOTOSHOP">
                 <img src="bildiklerimIcon/indesingIcon.png" width="100px" height="100px"  alt="INDESING">
                 <img src="bildiklerimIcon/xdIcon.png" width="100px" height="100px"  alt="XD">
-            </div>
+                <img src="bildiklerimIcon/excelicon.png" width="100px" height="100px"  alt="excel">
+                <img src="bildiklerimIcon/wordicon.png" width="100px" height="100px"  alt="word">
+                </div>
+            
     </section>
 <section id="yaptiklarim">
     <h2>YAPTIKLARIM</h2>
@@ -187,12 +192,18 @@
             </label>
          </div>
 
-           </div>
+           
              <div class="resim-kapsayici">
             <label for="lightbox-toggle20">
-                <a href="https://www.behance.net/gallery/240850311/Dergi-Kapag" target="_blank"><img class="yenisatirproje" src="işlerim/KaraDelik.png" alt="stilizasyon" class="kucuk-resim"></a>
+                <a href="https://www.behance.net/gallery/240850311/Dergi-Kapag" target="_blank"><img src="işlerim/KaraDelik.png" alt="stilizasyon" class="kucuk-resim"></a>
             </label>
-         </div>
+            </div>
+
+                 <div class="resim-kapsayici">
+            <label for="lightbox-toggle21">
+                <a href="https://www.behance.net/gallery/241192561/Logo-desing" target="_blank"><img src="işlerim/zooLogo.png" alt="logo" class="kucuk-resim"></a>
+            </label>
+            </div>
 
        
 
@@ -386,6 +397,57 @@
         </a>
     </div>
 </section>
+<!-- ... footer kısmından sonra ... -->
+
+</section>
+
+<!-- Behance Pop-up - Body'nin en sonuna ekle -->
+<div id="behance-popup" class="popup-overlay">
+  <div class="popup-content">
+    <span class="close-popup">&times;</span>
+    <h3>🎨 Logo Tasarım Hizmeti</h3>
+    <p>Kişisel logonuzu uygun fiyata tasarlamam için lütfen iletişime geçin!</p>
+    <a href="https://www.behance.net/ilanuzunbay" target="_blank" class="popup-button">Behance Profilime Git</a>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const popup = document.getElementById('behance-popup');
+  const closePopup = document.querySelector('.close-popup');
+  
+  // Her sayfa açılışında 10 saniye sonra pop-up göster
+  setTimeout(function() {
+    popup.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }, 10000); // 10 saniye
+  
+  // Kapatma fonksiyonu
+  function closePopupFunc() {
+    popup.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Kapat butonu
+  closePopup.addEventListener('click', closePopupFunc);
+  
+  // Pop-up dışına tıklayınca kapat
+  popup.addEventListener('click', function(e) {
+    if (e.target === popup) closePopupFunc();
+  });
+  
+  // Behance linkine tıklayınca pop-up'ı kapat
+  document.querySelector('.popup-button').addEventListener('click', closePopupFunc);
+  
+  // ESC tuşu ile kapat
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && popup.style.display === 'block') closePopupFunc();
+  });
+});
+</script>
+</body>
+</html>
 
     
 </body>
